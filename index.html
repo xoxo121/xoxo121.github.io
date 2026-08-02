@@ -357,7 +357,11 @@
               <span class="entry-role">Frontier AI Fellow</span>, <a href="https://pathway.com/">Pathway</a>
               <p>
                 Studying memory architectures that let AI systems reason over long contexts and stay coherent across
-                long-horizon tasks.
+                long-horizon tasks. Much of the work is about finding the shared structure behind approaches that
+                look unrelated — fast-weight programming, retrieval-augmented generation, linear attention, recurrent
+                memory, test-time learning — by treating them all as different ways of updating a state. I am also
+                looking at what persistent memory should mean for agentic and embodied systems that have to revise
+                what they believe as the world around them changes.
               </p>
             </td>
           </tr>
@@ -371,7 +375,11 @@
             <td width="75%" valign="middle">
               <span class="entry-role">Software Engineering Intern</span>, <a href="https://www.adobe.com/">Adobe</a>
               <p>
-                Built a semantic layout engine that automatically generates responsive mobile interfaces in Adobe Captivate.
+                Built a semantic layout engine that automatically generates responsive mobile interfaces in Adobe
+                Captivate. It reads a document's structure as a graph, plans the geometry deterministically, and only
+                falls back on AI refinement within bounded limits, so the output stays predictable rather than
+                surprising the author. Getting it into the product meant working across C++, TypeScript, React, and
+                the browser rendering stack.
               </p>
             </td>
           </tr>
@@ -387,8 +395,11 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://amit.aiisc.ai/">Prof. Amit Sheth</a></span>
               <p>
-                Worked on neurosymbolic reinforcement learning, conditioning embodied policies on editable rules and
-                constraints so they adapt to new tasks without retraining.
+                Worked on neurosymbolic reinforcement learning, where an embodied policy is conditioned on an editable
+                graph of rules, constraints, and preferences, so changing what the agent should do is a matter of
+                editing the specification rather than retraining. A large part of it was handling specifications that
+                conflict: detecting when a combination is impossible to satisfy, tracing a blocked action back to the
+                particular constraint responsible, and proposing the smallest repair that makes the task feasible again.
               </p>
             </td>
           </tr>
@@ -404,8 +415,11 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://oravus.github.io/">Prof. Sourav Garg</a></span>
               <p>
-                Studied how camera placement and sensor perturbations affect visuomotor navigation policies, and how to
-                train policies that hold up across sensor configurations.
+                Studied how much a visuomotor navigation policy quietly depends on the exact camera it was trained
+                with — height, pitch, and intrinsics all turn out to matter for waypoint prediction and closed-loop
+                control. I built a pipeline that generates sensor-perturbed observations while holding the underlying
+                scene, trajectories, and planning targets fixed, which made it possible to isolate the effect of the
+                sensor alone and test training strategies meant to generalize across configurations.
               </p>
             </td>
           </tr>
@@ -421,8 +435,11 @@
               <br>
               <span class="entry-project">Advisors: <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a>, Dr. Pradeep Ramachandran</span>
               <p>
-                Worked on compressing industrial anomaly detection models through knowledge distillation, making them
-                fast enough for production inspection.
+                Worked on making prototype-based industrial anomaly detection cheap enough to run on a production
+                line, using knowledge distillation to compress both the backbone and the stored feature prototypes
+                that these methods depend on. The harder part was compressing without losing the fine spatial detail
+                that localization needs; the resulting model kept almost all of the teacher's accuracy at roughly a
+                quarter of the size and more than twice the inference speed.
               </p>
             </td>
           </tr>
@@ -438,8 +455,11 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a></span>
               <p>
-                Worked on gaze estimation from lensless cameras, and on auditing how much identity information those
-                measurements leak.
+                Worked on gaze estimation from lensless cameras, and on auditing how much identity survives the
+                pipeline that produces it. The finding that shaped the work is that measurements which look like
+                meaningless blur to a person are still highly identifying, so the optics alone do not make a sensor
+                private. That led to a representation which separates what a gaze model needs from what identifies
+                the person, keeping accuracy while giving up much less.
               </p>
             </td>
           </tr>
@@ -455,8 +475,11 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://cambum.net/PB/about-me.php">Prof. Pradipta Biswas</a></span>
               <p>
-                Worked on real-time pose estimation of moving objects from 3D Gaussian splats streamed by infrastructure
-                cameras, for robot motion planning.
+                Worked on real-time pose estimation of moving objects from 3D Gaussian splats streamed by a single
+                infrastructure camera, so that a robot can plan around things that are actually in motion rather than
+                assuming a static scene. This covered retrieving the relevant part of the scene and tracking full
+                six-degree-of-freedom pose, and became a technical paper on pose estimation with explicit neural
+                radiance fields.
               </p>
             </td>
           </tr>
@@ -470,7 +493,10 @@
             <td width="75%" valign="middle">
               <span class="entry-role">AI Intern</span>, <a href="https://www.tattvamlabs.ai/">Tattvam AI</a>
               <p>
-                Explored abstract reasoning and program synthesis on ARC-AGI style benchmarks.
+                Explored abstract reasoning and program synthesis on ARC-AGI style benchmarks, which are designed
+                specifically to break the kind of pattern matching language models are good at. I tried a range of
+                reasoning-oriented solution strategies alongside parameter-efficient fine-tuning, aiming to get models
+                adapting to unfamiliar tasks from very few examples.
               </p>
             </td>
           </tr>
