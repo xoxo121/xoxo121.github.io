@@ -356,12 +356,9 @@
             <td width="75%" valign="middle">
               <span class="entry-role">Frontier AI Fellow</span>, <a href="https://pathway.com/">Pathway</a>
               <p>
-                Studying memory architectures that let AI systems reason over long contexts and stay coherent across
-                long-horizon tasks. Much of the work is about finding the shared structure behind approaches that
-                look unrelated — fast-weight programming, retrieval-augmented generation, linear attention, recurrent
-                memory, test-time learning — by treating them all as different ways of updating a state. I am also
-                looking at what persistent memory should mean for agentic and embodied systems that have to revise
-                what they believe as the world around them changes.
+                I work on how AI systems hold on to what matters over long stretches of work instead of losing the
+                thread. A lot of the approaches to this look unrelated at first glance, and I have been trying to show
+                they are really variations on the same idea.
               </p>
             </td>
           </tr>
@@ -375,11 +372,9 @@
             <td width="75%" valign="middle">
               <span class="entry-role">Software Engineering Intern</span>, <a href="https://www.adobe.com/">Adobe</a>
               <p>
-                Built a semantic layout engine that automatically generates responsive mobile interfaces in Adobe
-                Captivate. It reads a document's structure as a graph, plans the geometry deterministically, and only
-                falls back on AI refinement within bounded limits, so the output stays predictable rather than
-                surprising the author. Getting it into the product meant working across C++, TypeScript, React, and
-                the browser rendering stack.
+                I built a layout engine that turns a desktop design into a sensible mobile one. The interesting
+                constraint was keeping it predictable: it works out the geometry itself and only leans on AI at the
+                edges, so authors are not surprised by what comes out.
               </p>
             </td>
           </tr>
@@ -395,11 +390,9 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://amit.aiisc.ai/">Prof. Amit Sheth</a></span>
               <p>
-                Worked on neurosymbolic reinforcement learning, where an embodied policy is conditioned on an editable
-                graph of rules, constraints, and preferences, so changing what the agent should do is a matter of
-                editing the specification rather than retraining. A large part of it was handling specifications that
-                conflict: detecting when a combination is impossible to satisfy, tracing a blocked action back to the
-                particular constraint responsible, and proposing the smallest repair that makes the task feasible again.
+                I worked on robot policies you steer by editing a set of rules rather than by retraining them. The
+                tricky part is what happens when those rules contradict each other, so most of my time went into
+                catching conflicts and working out the smallest change that resolves them.
               </p>
             </td>
           </tr>
@@ -415,11 +408,9 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://oravus.github.io/">Prof. Sourav Garg</a></span>
               <p>
-                Studied how much a visuomotor navigation policy quietly depends on the exact camera it was trained
-                with — height, pitch, and intrinsics all turn out to matter for waypoint prediction and closed-loop
-                control. I built a pipeline that generates sensor-perturbed observations while holding the underlying
-                scene, trajectories, and planning targets fixed, which made it possible to isolate the effect of the
-                sensor alone and test training strategies meant to generalize across configurations.
+                I looked at how much a navigation policy quietly depends on the exact camera it learned with. Move the
+                camera a little and things fall apart, so I built a way to change only the sensor while keeping the
+                world identical, and tested what makes a policy hold up.
               </p>
             </td>
           </tr>
@@ -435,11 +426,9 @@
               <br>
               <span class="entry-project">Advisors: <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a>, Dr. Pradeep Ramachandran</span>
               <p>
-                Worked on making prototype-based industrial anomaly detection cheap enough to run on a production
-                line, using knowledge distillation to compress both the backbone and the stored feature prototypes
-                that these methods depend on. The harder part was compressing without losing the fine spatial detail
-                that localization needs; the resulting model kept almost all of the teacher's accuracy at roughly a
-                quarter of the size and more than twice the inference speed.
+                I worked on shrinking defect-detection models so they can actually run on a factory line. The hard
+                part was holding on to the fine detail that spotting small flaws depends on, and the compressed model
+                came out about a quarter of the size and twice as fast with almost no accuracy lost.
               </p>
             </td>
           </tr>
@@ -455,11 +444,9 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a></span>
               <p>
-                Worked on gaze estimation from lensless cameras, and on auditing how much identity survives the
-                pipeline that produces it. The finding that shaped the work is that measurements which look like
-                meaningless blur to a person are still highly identifying, so the optics alone do not make a sensor
-                private. That led to a representation which separates what a gaze model needs from what identifies
-                the person, keeping accuracy while giving up much less.
+                I worked on tracking where someone is looking using a camera with no lens. The images look like
+                meaningless blur, but you can still tell who the person is from them, so I spent my time on keeping
+                the gaze signal while throwing the identity away.
               </p>
             </td>
           </tr>
@@ -475,11 +462,8 @@
               <br>
               <span class="entry-project">Advisor: <a href="https://cambum.net/PB/about-me.php">Prof. Pradipta Biswas</a></span>
               <p>
-                Worked on real-time pose estimation of moving objects from 3D Gaussian splats streamed by a single
-                infrastructure camera, so that a robot can plan around things that are actually in motion rather than
-                assuming a static scene. This covered retrieving the relevant part of the scene and tracking full
-                six-degree-of-freedom pose, and became a technical paper on pose estimation with explicit neural
-                radiance fields.
+                I worked on tracking moving objects in real time from a single fixed camera, so a robot can plan
+                around things that will not stay put. It ended up becoming a technical paper.
               </p>
             </td>
           </tr>
@@ -493,10 +477,8 @@
             <td width="75%" valign="middle">
               <span class="entry-role">AI Intern</span>, <a href="https://www.tattvamlabs.ai/">Tattvam AI</a>
               <p>
-                Explored abstract reasoning and program synthesis on ARC-AGI style benchmarks, which are designed
-                specifically to break the kind of pattern matching language models are good at. I tried a range of
-                reasoning-oriented solution strategies alongside parameter-efficient fine-tuning, aiming to get models
-                adapting to unfamiliar tasks from very few examples.
+                I worked on puzzle benchmarks built specifically to trip up language models. Mostly I tried different
+                reasoning strategies to get a model solving unfamiliar tasks from just a handful of examples.
               </p>
             </td>
           </tr>
