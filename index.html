@@ -1,33 +1,47 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <script>
+      (function () {
+        var pref = localStorage.getItem("theme-pref") || "auto";
+        var isDark = pref === "dark" || (pref === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme-pref", pref);
+      })();
+    </script>
 
-    <title>Rahul Vimalkanth | IIT Madras | Robotics & Embodied AI</title>
+    <title>Rahul Vimalkanth | IIT Madras | Robotics &amp; Embodied AI</title>
 
-    <meta name="description" content="Rahul Vimalkanth is an undergraduate researcher at IIT Madras working on embodied AI, robot learning, computer vision, and neurosymbolic reasoning.">
-    <meta name="keywords" content="Rahul Vimalkanth, IIT Madras, Robotics, Embodied AI, Robot Learning, Computer Vision, Visual Navigation, Neurosymbolic AI, Research Portfolio">
+    <meta name="description" content="Rahul Vimalkanth is a final year undergraduate researcher at IIT Madras working on embodied AI, robot learning, computer vision, memory-centric AI, and neurosymbolic reasoning.">
+    <meta name="keywords" content="Rahul Vimalkanth, IIT Madras, Robotics, Embodied AI, Robot Learning, Computer Vision, Visual Navigation, Neurosymbolic AI, Memory Architectures, Gaussian Splatting, Research Portfolio">
     <meta name="author" content="Rahul Vimalkanth">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://xoxo121.github.io/">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xoxo121.github.io/">
     <meta property="og:title" content="Rahul Vimalkanth | Research Portfolio">
     <meta property="og:description" content="Undergraduate researcher at IIT Madras working on robotics, embodied AI, computer vision, and neurosymbolic reasoning.">
-    <meta property="og:image" content="https://xoxo121.github.io/images/PXL_20251228_161807861~2.jpg">
+    <meta property="og:image" content="https://xoxo121.github.io/images/headshots/rahul.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://xoxo121.github.io/">
     <meta name="twitter:title" content="Rahul Vimalkanth | Research Portfolio">
     <meta name="twitter:description" content="Undergraduate researcher at IIT Madras working on robotics, embodied AI, computer vision, and neurosymbolic reasoning.">
-    <meta name="twitter:image" content="https://xoxo121.github.io/images/PXL_20251228_161807861~2.jpg">
+    <meta name="twitter:image" content="https://xoxo121.github.io/images/headshots/rahul.jpg">
 
     <script type="application/ld+json">
     {
@@ -35,7 +49,7 @@
       "@type": "Person",
       "name": "Rahul Vimalkanth",
       "url": "https://xoxo121.github.io",
-      "image": "https://xoxo121.github.io/images/PXL_20251228_161807861~2.jpg",
+      "image": "https://xoxo121.github.io/images/headshots/rahul.jpg",
       "jobTitle": "Undergraduate Researcher",
       "affiliation": {
         "@type": "CollegeOrUniversity",
@@ -55,199 +69,773 @@
         "Visuomotor Control",
         "Neurosymbolic Reasoning",
         "Motion Planning",
-        "World Models"
+        "World Models",
+        "Memory Architectures",
+        "Gaussian Splatting"
       ],
-      "description": "Undergraduate researcher in Electrical Engineering at IIT Madras working on embodied AI, robot learning, computer vision, visuomotor control, and neurosymbolic reasoning."
+      "description": "Final year undergraduate researcher in Electrical Engineering at IIT Madras working on embodied AI, robot learning, computer vision, memory-centric AI systems, and neurosymbolic reasoning."
     }
     </script>
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="site-header-inner">
+      <div class="site-header-content">
+        <div class="header-icons">
+          <a href="mailto:rahulvimalkanth@gmail.com" title="Email" aria-label="Email">
+            <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=9X5NC9wAAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener">
+            <svg viewBox="5 49 374 414" fill="currentColor" aria-hidden="true"><path d="M 343.75868,106.66243 V 79.430205 L 363.52365,63.999997 H 149.63354 L 20.476345,176.2736 h 85.656075 c -0.15534,2.12494 -0.21914,4.04644 -0.21914,6.22563 0,20.84472 7.2192,38.08662 21.67203,51.86089 14.45284,13.79702 32.25124,20.64784 53.32651,20.64784 4.92319,0 9.75059,-0.36794 14.43842,-1.02419 -2.90722,6.50082 -4.37457,12.52302 -4.37457,18.14228 0,9.87526 4.49924,20.4304 13.46715,31.6418 -39.23377,2.6705 -68.06112,9.73264 -86.43702,21.16322 -10.53108,6.49907 -19.000207,14.70396 -25.390349,24.5311 -6.390569,9.89933 -9.577754,20.51525 -9.577754,31.9616 0,9.64822 2.062375,18.33611 6.21907,26.06233 4.156694,7.7263 9.577757,14.07047 16.312223,18.98408 6.71825,4.96781 14.46899,9.10088 23.219,12.46874 8.73429,3.34378 17.40643,5.71858 26.06106,7.06258 8.62707,1.34222 17.20471,1.9985 25.70579,1.9985 13.46887,0 26.95353,-1.73428 40.54711,-5.18707 13.56165,-3.48461 26.28022,-8.64143 38.17105,-15.4927 11.85935,-6.80488 21.51545,-16.0865 28.9219,-27.7183 7.39024,-11.67998 11.09457,-24.80499 11.09457,-39.33613 0,-11.01584 -2.24964,-21.03852 -6.7502,-30.14073 -4.46864,-9.07202 -9.93785,-16.54102 -16.45271,-22.34403 -6.5008,-5.81263 -12.99987,-11.15539 -19.51512,-15.9679 -6.50083,-4.84488 -12.00021,-9.75058 -16.46884,-14.8129 -4.4848,-5.04657 -6.73444,-10.05419 -6.73444,-14.98395 0,-4.92145 1.73422,-9.67183 5.21588,-14.26559 3.45451,-4.6095 7.67376,-9.04795 12.60967,-13.30571 4.93756,-4.24944 9.87523,-8.96788 14.79665,-14.13302 4.92147,-5.14719 9.14072,-11.82739 12.60971,-20.00822 3.48467,-8.17907 5.20318,-17.44489 5.20318,-27.75679 0,-13.4527 -2.54714,-24.46065 -7.54735,-33.31348 -0.59369,-1.02243 -1.21757,-1.80338 -1.87511,-3.02225 l 56.90745,-46.672136 v 17.118526 c -7.39373,0.92969 -6.62422,5.34582 -6.62422,10.6352 v 128.66719 c 0,5.95832 4.8751,10.83382 10.83386,10.83382 h 3.98869 c 5.95835,0 10.83386,-4.87506 10.83386,-10.83382 V 117.29282 c 0,-5.27669 0.77741,-9.68801 -6.56167,-10.63039 z M 236.39865,329.14114 c 1.14099,0.7503 3.7039,2.78075 7.7184,6.03838 4.0495,3.24319 6.797,5.69582 8.26567,7.41432 1.43851,1.66381 3.5792,4.16501 6.37617,7.54734 2.81268,3.3744 4.7184,6.30394 5.71853,8.73425 1.00016,2.4767 2.01603,5.46089 3.04636,8.94556 0.98567,3.44488 1.48486,6.97595 1.48486,10.56169 0,17.04813 -6.56338,29.68007 -19.65604,37.85915 -13.125,8.18083 -28.76651,12.27368 -46.93767,12.27368 -9.18709,0 -18.2031,-1.09289 -27.06247,-3.1951 -8.84322,-2.11665 -17.31192,-5.3362 -25.39035,-9.60185 -8.07846,-4.25771 -14.57754,-10.20337 -19.50072,-17.79659 -4.93764,-7.64012 -7.40645,-16.41464 -7.40645,-26.24962 0,-10.32022 2.79692,-19.28987 8.42233,-26.90588 5.59343,-7.62564 12.93774,-13.3919 22.03208,-17.3154 9.0624,-3.94582 18.24946,-6.74232 27.56166,-8.39827 9.31221,-1.7023 18.79679,-2.555 28.43842,-2.555 4.46862,0 7.93582,0.25115 10.40465,0.69607 0.45456,0.21918 3.03188,2.07025 7.73456,5.56326 4.70401,3.46237 7.62565,5.59519 8.75047,6.38401 z m -3.35823,-100.5779 c -7.40648,8.85938 -17.73454,13.2882 -30.95363,13.2882 -11.85933,0 -22.29766,-4.76482 -31.26554,-14.31195 -8.99984,-9.52309 -15.42235,-20.32803 -19.34408,-32.43061 -3.93752,-12.10871 -5.90585,-23.98423 -5.90585,-35.648 0,-13.6942 3.59542,-25.35184 10.7809,-34.97598 7.18727,-9.64952 17.49915,-14.48477 30.93786,-14.48477 11.87507,0 22.37423,5.03825 31.43704,15.15677 9.09434,10.08482 15.60961,21.41303 19.5169,33.96799 3.92176,12.5392 5.87345,24.52979 5.87345,35.98399 0,13.44658 -3.70256,24.60984 -11.07663,33.45436 z"/></svg>
+          </a>
+          <a href="https://github.com/xoxo121" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.29-1.552 3.297-1.23 3.297-1.23.655 1.652.244 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.371.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rahul-vimalkanth-13686728b/" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+        <button type="button" id="theme-toggle" class="theme-toggle" title="Theme: Auto" aria-label="Toggle color theme">
+          <span class="icon icon-auto" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20V2z" fill="currentColor"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <span class="icon icon-light" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+          <span class="icon icon-dark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+      </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+    <table class="tbl tbl--page">
       <tbody>
-        <tr>
-          <td style="padding:0;">
+      <tr class="cell-pad-0">
+      <td class="cell-pad-0">
 
-            <!-- Header -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:2.5%;width:63%;vertical-align:middle;">
-                    <p class="name" style="text-align:center;">
-                      Rahul Vimalkanth
-                    </p>
+        <table class="tbl">
+          <tbody>
+          <tr class="cell-pad-0">
 
-                    <p>
-                      I am a pre-final year undergraduate student in Electrical Engineering at
-                      <a href="https://www.iitm.ac.in/">IIT Madras</a>. My research interests lie at the intersection of
-                      embodied AI, robot learning, computer vision, and neurosymbolic reasoning, with a broader goal of
-                      building intelligent systems that can perceive, reason, and act reliably in the physical world.
-                    </p>
+            <td class="cell-profile-photo">
+              <div class="profile-photo-frame"><img class="profile-photo-img" alt="Profile photo of Rahul Vimalkanth" src="images/headshots/rahul.jpg"></div>
+            </td>
 
-                    <p>
-                      I will be joining <a href="https://en.wikipedia.org/wiki/Adobe_Inc.">Adobe</a> as an upcoming
-                      Product Intern, where I will work on neurosymbolic recommendation systems.
-                    </p>
+            <td class="cell-profile-bio">
+              <h1 class="profile-name text-center">Rahul Vimalkanth</h1>
 
-                    <p>
-                      At IIT Madras, I am a <strong><a href="https://yrf.iitm.ac.in/index.php">Young Research Fellow</a></strong>
-                      working on efficient vision models for industrial anomaly detection in collaboration with
-                      <a href="https://www.kla.com/">KLA Corporation</a>, advised by
-                      <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a>.
-                    </p>
+              <p>
+                <strong>I am a final year undergraduate student in Electrical Engineering at
+                <a href="https://www.iitm.ac.in/">IIT Madras</a>.</strong> My research sits at the intersection of
+                embodied AI, robot learning, computer vision, and neurosymbolic reasoning, with a broader goal of
+                building intelligent systems that can perceive, reason, and act reliably in the physical world.
+              </p>
 
-                    <p>
-                      I also work with <a href="https://oravus.github.io/">Prof. Sourav Garg</a> at the
-                      <a href="https://robotics.iiit.ac.in/">Robotics Research Center, IIIT Hyderabad</a>, where I study
-                      visuomotor policies for embodied navigation.
-                    </p>
+              <p>
+                I am currently an inaugural <strong>Frontier AI Fellow</strong> at
+                <a href="https://pathway.com/">Pathway</a>, where I study memory-centric architectures for
+                long-context reasoning, long-horizon decision making, and adaptive agentic systems.
+              </p>
 
-                    <p>
-                      Previously, I worked on robot perception and dynamic scene understanding at the
-                      <a href="https://cps.iisc.ac.in/">Robert Bosch Centre for Cyber-Physical Systems</a>,
-                      <a href="https://iisc.ac.in/">IISc Bangalore</a>.
-                    </p>
+              <p>
+                This past summer I was a Software Engineering Intern at <a href="https://www.adobe.com/">Adobe</a>,
+                building a semantic layout engine for responsive interface generation. I also collaborated with
+                <a href="https://amit.aiisc.ai/">Prof. Amit Sheth</a> at the
+                <a href="https://aiisc.ai/">AI Institute (AIISC)</a>,
+                <a href="https://www.sc.edu/">University of South Carolina</a>, on neurosymbolic reinforcement
+                learning with editable specifications.
+              </p>
 
-                    <p style="text-align:center;">
-                      <a href="mailto:rahulvimalkanth@gmail.com">Email</a> &nbsp;/&nbsp;
-                      <a href="https://scholar.google.com/citations?user=9X5NC9wAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                      <a href="https://www.linkedin.com/in/rahul-vimalkanth-13686728b/">LinkedIn</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/xoxo121">GitHub</a>
-                    </p>
-                  </td>
+              <p>
+                At IIT Madras I was a <a href="https://yrf.iitm.ac.in/index.php">Young Research Fellow</a> working on
+                efficient vision models for industrial anomaly detection with
+                <a href="https://www.kla.com/">KLA Corporation</a>, and a researcher in the
+                <a href="https://www.ee.iitm.ac.in/comp_photolab/">Computational Imaging Lab</a> studying lensless gaze
+                sensing and its privacy risks — both advised by
+                <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a>.
+              </p>
 
-                  <td style="padding:2.5%;width:40%;max-width:40%;">
-                    <a href="images/PXL_20251228_161807861~2.jpg">
-                      <img
-                        src="images/PXL_20251228_161807861~2.jpg"
-                        alt="Rahul Vimalkanth"
-                        class="hoverZoomLink"
-                        style="width:70%;max-width:70%;object-fit:cover;object-position:75% 30%;border-radius:50%;">
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              <p>
+                Previously, I worked with <a href="https://oravus.github.io/">Prof. Sourav Garg</a> at the
+                <a href="https://robotics.iiit.ac.in/">Robotics Research Center, IIIT Hyderabad</a> on visuomotor
+                policies for embodied navigation, and with
+                <a href="https://cambum.net/PB/about-me.php">Prof. Pradipta Biswas</a> at the
+                <a href="https://cps.iisc.ac.in/">Robert Bosch Centre for Cyber-Physical Systems</a>,
+                <a href="https://iisc.ac.in/">IISc Bangalore</a>, on pose estimation with dynamic 3D Gaussian splats.
+              </p>
 
-            <!-- Research Interests -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:16px;width:100%;vertical-align:middle;">
-                    <h2>Research Interests</h2>
-                    <p>
-                      I am broadly interested in how embodied agents can learn useful representations from perception,
-                      adapt across changing environments, and make reliable decisions under real-world uncertainty. My current
-                      interests include robot learning, visual navigation, visuomotor control, world models, long-horizon
-                      manipulation, and efficient models for real-world deployment.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              <p class="text-center">
+                <a href="mailto:rahulvimalkanth@gmail.com">Email</a> &nbsp;/&nbsp;
+                <a href="data/Rahul-Vimalkanth-CV.pdf">CV</a> &nbsp;/&nbsp;
+                <a href="https://scholar.google.com/citations?user=9X5NC9wAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
+                <a href="https://www.linkedin.com/in/rahul-vimalkanth-13686728b/">LinkedIn</a> &nbsp;/&nbsp;
+                <a href="https://github.com/xoxo121">GitHub</a>
+              </p>
 
-            <!-- Research -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:16px;width:100%;vertical-align:middle;">
-                    <h2>Research</h2>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
 
-            <!-- Research Items -->
-            <table style="width:100%;border:0;border-spacing:0 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
+        <!-- News -->
+        <table class="tbl tbl--page-spaced" aria-labelledby="news-heading">
+          <tbody>
+            <tr>
+              <td class="cell-pad-0">
 
-                <!-- ICRA 2026 Xplore Workshop -->
-                <tr>
-                  <td style="padding:16px;width:35%;vertical-align:middle;">
-                    <div class="one">
-                      <img
-                        src="images/hycos_routing_pipeline.png"
-                        width="100%"
-                        alt="HyCoS coupling-aware planner routing pipeline">
-                    </div>
-                  </td>
+                <table class="tbl">
+                  <tbody>
+                    <tr class="cell-pad-0">
+                      <td class="section-label">
+                        <h2 class="section-heading" id="news-heading">News</h2>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-                  <td style="padding:8px;width:65%;vertical-align:middle;">
-                    <span class="papertitle">Coupling-Aware Planner Exploration for Shared-Workspace Multi-Manipulator Motion Planning</span>
-                    <br>
-                    <strong>Rahul Vimalkanth</strong>
-                    <br>
-                    <em>ICRA 2026 Workshop on Xplore: Exploration in Robotics</em>, 2026
-                    <br>
-                    <p></p>
-                    <p>
-                      A coupling-aware planner selection study for shared-workspace multi-manipulator motion planning.
-                      The work examines when to rely on decoupled, hybrid, or joint-space planning under interaction uncertainty.
-                    </p>
-                  </td>
-                </tr>
+                <table class="tbl">
+                  <tbody>
+                    <tr>
+                      <td class="cell-lede">
+                        <div class="updates-card">
+                        <div class="updates-scroll">
+                          <div class="news-list">
+                            <div class="news-item"><span class="news-date">Jul 2026</span><span class="news-text">Selected as an inaugural <strong>Frontier AI Fellow</strong> at <a href="https://pathway.com/">Pathway</a>, working on memory-centric AI systems and long-horizon intelligence!</span></div>
+                            <div class="news-item"><span class="news-date">Jul 2026</span><span class="news-text">Wrapped up my software engineering internship at <a href="https://www.adobe.com/">Adobe</a>, where I architected Prism, a semantic layout engine for Adobe Captivate.</span></div>
+                            <div class="news-item"><span class="news-date">2026</span><span class="news-text">My work on <a href="#research-heading">coupling-aware planner exploration</a> for shared-workspace multi-manipulator motion planning was accepted to the Xplore workshop at ICRA 2026!</span></div>
+                            <div class="news-item"><span class="news-date">May 2026</span><span class="news-text">Started a research collaboration with <a href="https://amit.aiisc.ai/">Prof. Amit Sheth</a> at <a href="https://aiisc.ai/">AIISC, University of South Carolina</a> on neurosymbolic RL with editable specifications.</span></div>
+                            <div class="news-item"><span class="news-date">Feb 2026</span><span class="news-text">Joined the <a href="https://robotics.iiit.ac.in/">Robotics Research Center, IIIT Hyderabad</a> with <a href="https://oravus.github.io/">Prof. Sourav Garg</a> to study sensor-robust visuomotor navigation.</span></div>
+                            <div class="news-item"><span class="news-date">Dec 2025</span><span class="news-text">Led a team of 8 as Problem Statement Lead at <a href="https://interiit-tech.org/">Inter-IIT Tech Meet 14.0</a>, building a real-time agentic treasury orchestration system.</span></div>
+                            <div class="news-item"><span class="news-date">Nov 2025</span><span class="news-text">Our paper on <a href="https://arxiv.org/abs/2509.16369">agentic financial RAG with Multi-HyDE</a> was accepted to the FinNLP workshop at EMNLP 2025!</span></div>
+                            <div class="news-item"><span class="news-date">Aug 2025</span><span class="news-text">Selected as a <a href="https://yrf.iitm.ac.in/index.php">Young Research Fellow</a> at IIT Madras, building efficient vision models for industrial anomaly detection with <a href="https://www.kla.com/">KLA Corporation</a>.</span></div>
+                          </div>
+                        </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-                <!-- EMNLP FinNLP 2025 -->
-                <tr onmouseout="rag_stop()" onmouseover="rag_start()">
-                  <td style="padding:16px;width:35%;vertical-align:middle;">
-                    <div class="one">
-                      <div class="two" id="rag_image">
-                        <img src="images/emnlp2025.png" width="100%" alt="EMNLP FinNLP 2025">
-                      </div>
-                      <img src="images/emnlp2025.png" width="100%" alt="EMNLP FinNLP 2025">
-                    </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-                    <script type="text/javascript">
-                      function rag_start() {
-                        document.getElementById('rag_image').style.opacity = "1";
-                      }
+        <!-- Research Interests -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="interests-heading">Research Interests</h2>
+            </td>
+          </tr>
+        </tbody></table>
 
-                      function rag_stop() {
-                        document.getElementById('rag_image').style.opacity = "0";
-                      }
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-lede">
+              <p class="research-lede">
+                I am broadly interested in how embodied agents can learn useful representations from perception,
+                adapt across changing environments, and make reliable decisions under real-world uncertainty. My current
+                interests include robot learning, visual navigation and visuomotor control, memory architectures for
+                long-horizon reasoning, neurosymbolic specification and control, long-horizon manipulation, and
+                efficient, privacy-aware models for real-world deployment.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
 
-                      rag_stop();
-                    </script>
-                  </td>
+        <!-- Research -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="research-heading">Research</h2>
+            </td>
+          </tr>
+        </tbody></table>
 
-                  <td style="padding:8px;width:65%;vertical-align:middle;">
-                    <a href="https://arxiv.org/abs/2509.16369">
-                      <span class="papertitle">Enhancing Financial RAG with Agentic AI and Multi-HyDE: A Novel Approach to Knowledge Retrieval and Hallucination Reduction</span>
-                    </a>
-                    <br>
-                    A.G. Srinivasan, R.J. George, J.K. Joe, H. Kant, H. M R, S. Sundar, S. Suresh,
-                    <strong>Rahul Vimalkanth</strong>, Vijayavallabh
-                    <br>
-                    <em>EMNLP 2025 Workshop on Financial Technology and Natural Language Processing</em>, 2025
-                    <br>
-                    <a href="https://arxiv.org/abs/2509.16369">arXiv</a>
-                    <p></p>
-                    <p>
-                      An agentic retrieval-augmented generation framework using Multi-HyDE and state machines for financial question answering.
-                    </p>
-                  </td>
-                </tr>
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-lede">
+              <p class="research-lede">
+                Papers and preprints are ordered by recency. Please see my
+                <a href="https://scholar.google.com/citations?user=9X5NC9wAAAAJ&hl=en">Google Scholar</a> page for a
+                complete and up-to-date list of papers.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
 
-              </tbody>
-            </table>
+        <div id="research-list">
+        <table class="tbl tbl--surface tbl--pad-top"><tbody>
+          <tr>
+            <td class="cell-thumb">
+              <img class="thumb-fill" src="images/research/hycos_routing_pipeline.png" alt="Coupling-aware planner routing pipeline">
+            </td>
+            <td width="75%" valign="middle">
+              <span class="paper-title">Coupling-Aware Planner Exploration for Shared-Workspace Multi-Manipulator Motion Planning</span>
+              <br>
+              <strong>Rahul Vimalkanth</strong>
+              <br>
+              <span class="conference-badge badge-icra">ICRA 2026 Workshop</span>
+              <br>
+              <span class="venue-note">ICRA 2026 Workshop on Xplore: Exploration in Robotics</span>
+              <p>
+                A coupling-aware planner selection study for shared-workspace multi-manipulator motion planning.
+                The work examines when to rely on decoupled, hybrid, or joint-space planning under interaction uncertainty.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
 
-            <!-- Footer -->
-            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:0;">
-                    <br>
-                    <p style="text-align:center;font-size:small;">
-                      Website template from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <table class="tbl tbl--surface tbl--pad-top"><tbody>
+          <tr>
+            <td class="cell-thumb">
+              <img class="thumb-fill" src="images/research/emnlp2025.png" alt="Agentic financial RAG with Multi-HyDE">
+            </td>
+            <td width="75%" valign="middle">
+              <a href="https://arxiv.org/abs/2509.16369"><span class="paper-title">Enhancing Financial RAG with Agentic AI and Multi-HyDE: A Novel Approach to Knowledge Retrieval and Hallucination Reduction</span></a>
+              <br>
+              A.G. Srinivasan, R.J. George, J.K. Joe, H. Kant, H. M R, S. Sundar, S. Suresh, <strong>Rahul Vimalkanth</strong>, Vijayavallabh
+              <br>
+              <span class="conference-badge badge-emnlp">EMNLP 2025 Workshop</span>
+              <br>
+              <a href="https://arxiv.org/abs/2509.16369">arXiv</a>
+              <br>
+              <span class="venue-note">EMNLP 2025 Workshop on Financial Technology and Natural Language Processing</span>
+              <p>
+                An agentic retrieval-augmented generation framework using Multi-HyDE and state machines for financial question answering.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        </div>
 
-          </td>
-        </tr>
+        <!-- Work in Submission -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="submissions-heading">Work in Submission</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-lede">
+              <p class="research-lede">
+                Manuscripts currently under review. Links and figures will be posted once the work is public.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <span class="paper-title">Lensless Gaze Is Not Private by Default: Auditing Identity Leakage Across Disclosure Surfaces</span>
+              <br>
+              <span class="conference-badge badge-eccv">ECCV 2026 Workshop</span> <span class="venue-note">Under review</span>
+              <br>
+              <span class="venue-note">PFATCV Workshop, European Conference on Computer Vision</span>
+              <p>
+                An analytical framework for auditing identity leakage in lensless gaze sensing across optical measurement,
+                digital representation, storage, and output disclosure surfaces, showing that visually unintelligible
+                lensless measurements remain highly identifying.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <span class="paper-title">Gaussian Splats Meet Motion Planning: Single-Camera Object Tracking for Robot Autonomy</span>
+              <br>
+              <span class="conference-badge badge-icra">ICRA 2026</span> <span class="venue-note">Under review</span>
+              <br>
+              <span class="venue-note">IEEE International Conference on Robotics and Automation</span>
+              <p>
+                Real-time pose estimation of dynamic objects from 3D Gaussian splats streamed by a single infrastructure
+                camera, enabling scene retrieval and six-degree-of-freedom tracking for robot motion planning.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <span class="paper-title">When LLMs Orchestrate but Do Not Compute: Tool-Grounded Agents over Structured Streaming Financial Data</span>
+              <br>
+              <span class="conference-badge badge-acl">ACL 2026 Workshop</span> <span class="venue-note">Under review</span>
+              <br>
+              <span class="venue-note">SURGeLLM Workshop, Association for Computational Linguistics</span>
+              <p>
+                A tool-grounded agent design in which language models orchestrate rather than compute, delegating
+                numerical work to deterministic tools over structured streaming financial data.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- Experience -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="experience-heading">Experience</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-lede">
+              <p class="research-lede">Research and industry roles, ordered by recency.</p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/pathway.png" alt="Pathway logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Frontier AI Fellow</span>, <a href="https://pathway.com/">Pathway</a>
+              <br>
+              <span class="entry-dates">Jul 2026 – Present</span>
+              <br>
+              <span class="entry-project">Memory-Centric AI Systems and Long-Horizon Intelligence</span>
+              <ul class="info-list">
+                <li>Selected as an inaugural Frontier AI Fellow to investigate next-generation memory architectures for long-context reasoning, long-horizon decision making, and adaptive AI systems.</li>
+                <li>Developed a unified framework for memory update mechanisms, connecting fast-weight programming, retrieval-augmented generation, linear attention, recurrent memory, and test-time learning through a state-update formulation.</li>
+                <li>Studying persistent memory for agentic and embodied AI, with an emphasis on knowledge consolidation, belief revision, and reasoning over continuously evolving environments.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/adobe.png" alt="Adobe logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Software Engineering Intern</span>, <a href="https://www.adobe.com/">Adobe</a>
+              <br>
+              <span class="entry-dates">May 2026 – Jul 2026</span>
+              <br>
+              <span class="entry-project">Responsive Layout Recommendation Engine for Adobe Captivate</span>
+              <ul class="info-list">
+                <li>Architected Prism, a semantic layout engine combining graph-based document reasoning with deterministic geometric planning and bounded AI refinement to generate responsive mobile interfaces.</li>
+                <li>Researched responsive layout generation via document understanding and constraint optimization, translating research insights into a production-ready system architecture.</li>
+                <li>Implemented the inference engine across C++, TypeScript, React, and browser rendering systems, resolving cross-stack integration challenges in a reusable framework.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/aiisc.png" alt="University of South Carolina logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Research Collaborator</span>, <a href="https://aiisc.ai/">AI Institute (AIISC)</a>, <a href="https://www.sc.edu/">University of South Carolina</a>
+              <br>
+              <span class="entry-dates">May 2026 – Jul 2026</span>
+              <br>
+              <span class="entry-project">Neurosymbolic Reinforcement Learning with Editable Specifications · Advisor: <a href="https://amit.aiisc.ai/">Prof. Amit Sheth</a></span>
+              <ul class="info-list">
+                <li>Developed SpecEdit, a neurosymbolic RL framework conditioning embodied policies on editable graphs of rules, constraints, and preferences to enable zero-shot task adaptation without policy retraining.</li>
+                <li>Designed conflict-aware dynamic shielding to detect infeasible specification combinations, attribute blocked actions to specific constraints, and perform minimal, auditable specification repairs.</li>
+                <li>Built belief-grounded execution for ALFWorld agents by maintaining persistent symbolic world states grounded against physical object properties, action histories, and partial observations.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/iiith.png" alt="IIIT Hyderabad logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Research Intern</span>, <a href="https://robotics.iiit.ac.in/">Robotics Research Center</a>, <a href="https://www.iiit.ac.in/">IIIT Hyderabad</a>
+              <br>
+              <span class="entry-dates">Feb 2026 – May 2026</span>
+              <br>
+              <span class="entry-project">Sensor-Robust Visuomotor Control for Embodied Navigation · Advisor: <a href="https://oravus.github.io/">Prof. Sourav Garg</a></span>
+              <ul class="info-list">
+                <li>Investigated sensor-configuration robustness in visuomotor navigation policies, analyzing how camera height, pitch, and intrinsic perturbations affect waypoint prediction and closed-loop control.</li>
+                <li>Built a controlled data-generation and evaluation pipeline for sensor-perturbed observations that preserves the underlying semantic maps, trajectories, planning targets, and path navigation costs.</li>
+                <li>Evaluated invariance-focused training strategies for cross-configuration generalization, benchmarking navigation success, shortest path length, and collision metrics.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/kla.png" alt="KLA Corporation logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Young Research Fellow</span>, <a href="https://www.iitm.ac.in/">IIT Madras</a> · in collaboration with <a href="https://www.kla.com/">KLA Corporation</a>
+              <br>
+              <span class="entry-dates">Aug 2025 – Aug 2026</span>
+              <br>
+              <span class="entry-project">Structured Knowledge Distillation for Prototype-Based Industrial Anomaly Localization · Advisors: <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a>, Dr. Pradeep Ramachandran</span>
+              <ul class="info-list">
+                <li>Developed ProtoRank-KD, a knowledge-distillation framework for efficient prototype-based industrial anomaly localization in production environments.</li>
+                <li>Proposed transport-guided representation transfer to preserve localization-relevant normality structures while compressing both deep backbones and memory-based feature prototypes.</li>
+                <li>Retained 99.2% of teacher P-AUPRO accuracy while achieving roughly 4× model compression and a 2.29× inference speedup.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/iitm.png" alt="IIT Madras logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Undergraduate Researcher</span>, <a href="https://www.ee.iitm.ac.in/comp_photolab/">Computational Imaging Lab</a>, <a href="https://www.iitm.ac.in/">IIT Madras</a>
+              <br>
+              <span class="entry-dates">Nov 2024 – Jul 2026</span>
+              <br>
+              <span class="entry-project">Lensless Gaze Estimation and Privacy-Risk Auditing · Advisor: <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a></span>
+              <ul class="info-list">
+                <li>Developed a framework for auditing identity leakage in lensless gaze sensing across optical measurement, digital representation, storage, and output disclosure surfaces.</li>
+                <li>Showed that visually unintelligible lensless measurements remain highly identifying, challenging the assumption that optical hardware obfuscation alone guarantees privacy.</li>
+                <li>Proposed GazeSplit, a public–private feature representation that minimizes identity leakage via semantic tokenization while preserving downstream gaze estimation accuracy.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/iisc.png" alt="Indian Institute of Science logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">Robotics Intern</span>, <a href="https://cps.iisc.ac.in/">Robert Bosch Centre for Cyber-Physical Systems</a>, <a href="https://iisc.ac.in/">IISc Bangalore</a>
+              <br>
+              <span class="entry-dates">May 2025 – Sep 2025</span>
+              <br>
+              <span class="entry-project">Pose Estimation using Dynamic 3D Gaussian Splats · Advisor: <a href="https://cambum.net/PB/about-me.php">Prof. Pradipta Biswas</a></span>
+              <ul class="info-list">
+                <li>Engineered a system for real-time pose estimation of dynamic objects using 3D Gaussian splats streamed from infrastructure cameras, supporting robust autonomous motion planning.</li>
+                <li>Guided research directions through literature analyses spanning panoptic segmentation, semantic 3D Gaussian splatting, pose estimation, and planar reconstruction.</li>
+                <li>Authored a technical paper on scene retrieval and six-degree-of-freedom pose estimation using explicit neural radiance fields for dynamic environments.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/tattvam.png" alt="Tattvam AI logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">AI Intern</span>, <a href="https://www.tattvamlabs.ai/">Tattvam AI</a>
+              <br>
+              <span class="entry-dates">May 2024 – Jul 2024</span>
+              <br>
+              <span class="entry-project">Abstract Reasoning and Program Synthesis</span>
+              <ul class="info-list">
+                <li>Investigated ARC-AGI abstract reasoning and program-synthesis benchmarks designed to expose algorithmic generalization failures beyond language-model pattern matching.</li>
+                <li>Developed and evaluated reasoning-oriented solution strategies, improving model adaptation efficiency through parameter-efficient fine-tuning.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- Leadership & Service -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="leadership-heading">Leadership &amp; Service</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <span class="entry-role">Problem Statement Lead</span>, <a href="https://interiit-tech.org/">Inter-IIT Tech Meet 14.0</a>
+              <br>
+              <span class="entry-dates">Oct 2025 – Dec 2025</span>
+              <ul class="info-list">
+                <li>Led a team of 8 to architect a real-time agentic treasury orchestration system on <a href="https://pathway.com/">Pathway</a>, combining automated cash-flow forecasting with dynamic multi-asset investment execution.</li>
+                <li>Engineered a multi-agent framework with LangGraph for asynchronous fusion of high-frequency market ticks and macro data, with online streaming ML for interest rate forecasting.</li>
+                <li>Developed bond pricing and investment agents that generate buy/sell signals with explainable rationales under shifting monetary policy and market volatility.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <span class="entry-role">Contingent Member</span>, <a href="https://interiit-tech.org/">Inter-IIT Tech Meet 13.0</a>
+              <br>
+              <span class="entry-dates">Oct 2024 – Dec 2024</span>
+              <ul class="info-list">
+                <li>Contributed to an agentic RAG framework using Multi-HyDE and deterministic state machines for low-hallucination document retrieval across complex SEC filings.</li>
+                <li>Built custom caching and 95%-accurate intent differentiation for financial RAG pipelines, improving numerical precision and temporal alignment using FAISS and LRU caches.</li>
+                <li>Developed a user variable storage architecture for stateful updates to preferences and retrieved data across sequential interaction sessions.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <span class="entry-role">Project Member</span>, WebOps &amp; Blockchain Club, <a href="https://cfi.iitm.ac.in/">Centre for Innovation, IIT Madras</a>
+              <br>
+              <span class="entry-dates">May 2024 – Mar 2025</span>
+              <ul class="info-list">
+                <li>Architected a multi-agent autonomous code assistant with LangGraph that writes, executes, iteratively debugs, and validates source code from natural language prompts.</li>
+                <li>Built secure local file system interaction, automated syntax and logic error correction, and integration for live website deployment.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- Awards -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="awards-heading">Awards</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <ul class="info-list">
+                <li>All India Rank 1728 in JEE Advanced 2023, placing in the top 1% of roughly 200,000 candidates.</li>
+                <li>Top 0.5 percentile in JEE Main 2023 among a nationwide pool exceeding 1.4 million applicants.</li>
+                <li>All India Rank 372 in KVPY 2022, earning direct undergraduate admission offers from premier research institutions.</li>
+                <li>State Rank 2 in NTSE Stage-I 2021, subsequently placing in the top 800 nationally.</li>
+                <li>Certificate of Merit in the Indian Olympiad Qualifier in Mathematics (IOQM).</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- Education -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="education-heading">Education</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-logo">
+              <span class="logo-frame"><img src="images/experience/iitm.png" alt="IIT Madras logo"></span>
+            </td>
+            <td width="75%" valign="middle">
+              <span class="entry-role">B.Tech in Electrical Engineering</span>
+              <br>
+              <a href="https://www.iitm.ac.in/">Indian Institute of Technology Madras</a>
+              <br>
+              <span class="entry-dates">2023 – 2027 (expected)</span>
+              <p>
+                Coursework in deep learning, reinforcement learning, natural language processing, motion planning,
+                automated planning and learning, federated and distributed machine learning, computational photography,
+                control systems, computer organization, probability, and signals and systems.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- Skills -->
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="skills-heading">Skills</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-full">
+              <div class="skill-grid">
+                <span class="skill-label">Programming</span>
+                <span>Python, C/C++, Verilog, ARM/AVR Assembly</span>
+                <span class="skill-label">Frameworks &amp; ML</span>
+                <span>PyTorch, TensorFlow, CUDA, OpenCV, LangChain, LangGraph, Hugging Face, scikit-learn</span>
+                <span class="skill-label">Tools &amp; Cloud</span>
+                <span>Docker, Git/GitHub, Weights &amp; Biases, Bash, Unsloth</span>
+                <span class="skill-label">Certifications</span>
+                <span>Machine Learning &amp; Deep Learning Specialization (Andrew Ng), OpenCV Bootcamp</span>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!--
+        PLACEHOLDER SECTION: Theses & Dissertations.
+        Uncomment when there is content to list, and duplicate the inner entry table per thesis.
+
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="theses-heading">Theses &amp; Dissertations</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-lede">
+              <p class="research-lede">My thesis research, ordered by recency.</p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-thumb">
+              <img src="images/research/THUMBNAIL.png" alt="Thesis thumbnail" width="140" height="140">
+            </td>
+            <td width="75%" valign="middle">
+              <a href="LINK"><span class="paper-title">THESIS TITLE</span></a>
+              <br>
+              <strong>Rahul Vimalkanth</strong>, ADVISOR
+              <br>
+              <span class="conference-badge badge-bsc">Undergraduate Thesis</span>
+              <br>
+              <em>Department of Electrical Engineering, IIT Madras</em>, YEAR
+              <br>
+              <a href="LINK">PDF</a>
+              <p>ONE OR TWO SENTENCE SUMMARY.</p>
+            </td>
+          </tr>
+        </tbody></table>
+        -->
+
+        <!--
+        PLACEHOLDER SECTION: Patents.
+        Uncomment when there is content to list, and duplicate the inner entry table per patent.
+
+        <table class="tbl tbl--section-gap"><tbody>
+          <tr>
+            <td class="section-label">
+              <h2 class="section-heading" id="patents-heading">Patents</h2>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table class="tbl tbl--surface"><tbody>
+          <tr>
+            <td class="cell-thumb">
+              <img src="images/research/THUMBNAIL.png" alt="Patent thumbnail" width="140" height="140">
+            </td>
+            <td width="75%" valign="middle">
+              <a href="LINK"><span class="paper-title">PATENT TITLE</span></a>
+              <br>
+              <strong>Rahul Vimalkanth</strong>, CO-INVENTORS
+              <br>
+              Application No. NUMBER. YEAR
+              <br>
+              <a href="LINK">Google Patents</a>
+              <p>ONE OR TWO SENTENCE SUMMARY.</p>
+            </td>
+          </tr>
+        </tbody></table>
+        -->
+
+      </td>
+      </tr>
       </tbody>
     </table>
+    </main>
+
+    <div class="site-icons-divider"></div>
+    <div class="site-icons-row">
+      <a href="mailto:rahulvimalkanth@gmail.com" title="Email" aria-label="Email">
+        <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=9X5NC9wAAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener">
+        <svg viewBox="5 49 374 414" fill="currentColor" aria-hidden="true"><path d="M 343.75868,106.66243 V 79.430205 L 363.52365,63.999997 H 149.63354 L 20.476345,176.2736 h 85.656075 c -0.15534,2.12494 -0.21914,4.04644 -0.21914,6.22563 0,20.84472 7.2192,38.08662 21.67203,51.86089 14.45284,13.79702 32.25124,20.64784 53.32651,20.64784 4.92319,0 9.75059,-0.36794 14.43842,-1.02419 -2.90722,6.50082 -4.37457,12.52302 -4.37457,18.14228 0,9.87526 4.49924,20.4304 13.46715,31.6418 -39.23377,2.6705 -68.06112,9.73264 -86.43702,21.16322 -10.53108,6.49907 -19.000207,14.70396 -25.390349,24.5311 -6.390569,9.89933 -9.577754,20.51525 -9.577754,31.9616 0,9.64822 2.062375,18.33611 6.21907,26.06233 4.156694,7.7263 9.577757,14.07047 16.312223,18.98408 6.71825,4.96781 14.46899,9.10088 23.219,12.46874 8.73429,3.34378 17.40643,5.71858 26.06106,7.06258 8.62707,1.34222 17.20471,1.9985 25.70579,1.9985 13.46887,0 26.95353,-1.73428 40.54711,-5.18707 13.56165,-3.48461 26.28022,-8.64143 38.17105,-15.4927 11.85935,-6.80488 21.51545,-16.0865 28.9219,-27.7183 7.39024,-11.67998 11.09457,-24.80499 11.09457,-39.33613 0,-11.01584 -2.24964,-21.03852 -6.7502,-30.14073 -4.46864,-9.07202 -9.93785,-16.54102 -16.45271,-22.34403 -6.5008,-5.81263 -12.99987,-11.15539 -19.51512,-15.9679 -6.50083,-4.84488 -12.00021,-9.75058 -16.46884,-14.8129 -4.4848,-5.04657 -6.73444,-10.05419 -6.73444,-14.98395 0,-4.92145 1.73422,-9.67183 5.21588,-14.26559 3.45451,-4.6095 7.67376,-9.04795 12.60967,-13.30571 4.93756,-4.24944 9.87523,-8.96788 14.79665,-14.13302 4.92147,-5.14719 9.14072,-11.82739 12.60971,-20.00822 3.48467,-8.17907 5.20318,-17.44489 5.20318,-27.75679 0,-13.4527 -2.54714,-24.46065 -7.54735,-33.31348 -0.59369,-1.02243 -1.21757,-1.80338 -1.87511,-3.02225 l 56.90745,-46.672136 v 17.118526 c -7.39373,0.92969 -6.62422,5.34582 -6.62422,10.6352 v 128.66719 c 0,5.95832 4.8751,10.83382 10.83386,10.83382 h 3.98869 c 5.95835,0 10.83386,-4.87506 10.83386,-10.83382 V 117.29282 c 0,-5.27669 0.77741,-9.68801 -6.56167,-10.63039 z M 236.39865,329.14114 c 1.14099,0.7503 3.7039,2.78075 7.7184,6.03838 4.0495,3.24319 6.797,5.69582 8.26567,7.41432 1.43851,1.66381 3.5792,4.16501 6.37617,7.54734 2.81268,3.3744 4.7184,6.30394 5.71853,8.73425 1.00016,2.4767 2.01603,5.46089 3.04636,8.94556 0.98567,3.44488 1.48486,6.97595 1.48486,10.56169 0,17.04813 -6.56338,29.68007 -19.65604,37.85915 -13.125,8.18083 -28.76651,12.27368 -46.93767,12.27368 -9.18709,0 -18.2031,-1.09289 -27.06247,-3.1951 -8.84322,-2.11665 -17.31192,-5.3362 -25.39035,-9.60185 -8.07846,-4.25771 -14.57754,-10.20337 -19.50072,-17.79659 -4.93764,-7.64012 -7.40645,-16.41464 -7.40645,-26.24962 0,-10.32022 2.79692,-19.28987 8.42233,-26.90588 5.59343,-7.62564 12.93774,-13.3919 22.03208,-17.3154 9.0624,-3.94582 18.24946,-6.74232 27.56166,-8.39827 9.31221,-1.7023 18.79679,-2.555 28.43842,-2.555 4.46862,0 7.93582,0.25115 10.40465,0.69607 0.45456,0.21918 3.03188,2.07025 7.73456,5.56326 4.70401,3.46237 7.62565,5.59519 8.75047,6.38401 z m -3.35823,-100.5779 c -7.40648,8.85938 -17.73454,13.2882 -30.95363,13.2882 -11.85933,0 -22.29766,-4.76482 -31.26554,-14.31195 -8.99984,-9.52309 -15.42235,-20.32803 -19.34408,-32.43061 -3.93752,-12.10871 -5.90585,-23.98423 -5.90585,-35.648 0,-13.6942 3.59542,-25.35184 10.7809,-34.97598 7.18727,-9.64952 17.49915,-14.48477 30.93786,-14.48477 11.87507,0 22.37423,5.03825 31.43704,15.15677 9.09434,10.08482 15.60961,21.41303 19.5169,33.96799 3.92176,12.5392 5.87345,24.52979 5.87345,35.98399 0,13.44658 -3.70256,24.60984 -11.07663,33.45436 z"/></svg>
+      </a>
+      <a href="https://github.com/xoxo121" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.003 0c2.29-1.552 3.297-1.23 3.297-1.23.655 1.652.244 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.371.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/rahul-vimalkanth-13686728b/" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+
+    <p class="template-credit">
+      Website template adapted from <a href="https://github.com/agiachris/agiachris.github.io">Chris Agia</a>
+      and <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
+    </p>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-content">
+          <div class="footer-note">
+            © Copyright <span id="footer-year"></span> Rahul Vimalkanth. Hosted by GitHub Pages. Last updated <span id="footer-updated"></span>.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var STORAGE_KEY = "theme-pref";
+        var root = document.documentElement;
+        var mql = window.matchMedia("(prefers-color-scheme: dark)");
+        var order = ["auto", "light", "dark"];
+        var labels = { auto: "Theme: Auto", light: "Theme: Day", dark: "Theme: Night" };
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+
+        function apply(pref) {
+          var isDark = pref === "dark" || (pref === "auto" && mql.matches);
+          root.setAttribute("data-theme", isDark ? "dark" : "light");
+          root.setAttribute("data-theme-pref", pref);
+          btn.setAttribute("data-active", pref);
+          btn.setAttribute("title", labels[pref]);
+          btn.setAttribute("aria-label", labels[pref]);
+        }
+
+        apply(localStorage.getItem(STORAGE_KEY) || "auto");
+
+        mql.addEventListener("change", function () {
+          if ((localStorage.getItem(STORAGE_KEY) || "auto") === "auto") apply("auto");
+        });
+
+        btn.addEventListener("click", function () {
+          var current = localStorage.getItem(STORAGE_KEY) || "auto";
+          var next = order[(order.indexOf(current) + 1) % order.length];
+          localStorage.setItem(STORAGE_KEY, next);
+          apply(next);
+        });
+      })();
+
+      (function () {
+        var yearEl = document.getElementById("footer-year");
+        var updatedEl = document.getElementById("footer-updated");
+        var modified = new Date(document.lastModified);
+        if (yearEl) yearEl.textContent = modified.getFullYear();
+        if (updatedEl) {
+          updatedEl.textContent = modified.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+        }
+      })();
+    </script>
+
   </body>
 </html>
