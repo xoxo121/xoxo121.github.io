@@ -8,7 +8,6 @@ Personal academic website of Rahul Vimalkanth — [https://xoxo121.github.io/](h
 index.html            page content (bio, news, research, experience, awards, skills)
 stylesheet.css        base typography and link colors
 css/home.css          layout, theming, badges, news, footer
-data/                 CV PDF
 images/headshots/     profile photo
 images/research/      paper thumbnails
 images/experience/    organization logos
@@ -21,7 +20,6 @@ images/favicon/       favicons
 - **Adding news:** add a `<div class="news-item">` at the top of `.news-list`. The list scrolls after ~5 items.
 - **Adding experience:** copy an entry table from the Experience section. Logos live in `images/experience/` and sit inside a `.logo-frame`, which keeps a white plate behind them so dark marks stay visible in dark mode.
 - **Theses and Patents:** commented-out scaffolding for both sections sits at the end of the main content in `index.html`. Uncomment to enable.
-- **Updating the CV:** replace `data/Rahul-Vimalkanth-CV.pdf`.
 
 ## Credits
 
